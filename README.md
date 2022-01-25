@@ -1,1 +1,1 @@
-# realtime-sign-language-detection
+# realtime-sign-language-recognition
