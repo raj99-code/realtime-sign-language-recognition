@@ -1,4 +1,4 @@
-<p align="centre">
+<p align="center">
 ![This is an image](logo.png)
 </p>
 
