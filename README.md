@@ -1,4 +1,4 @@
-![This is an image](/assests/images/logo.png)
+![This is an image](logo.png)
 
 # KnowSign
 
