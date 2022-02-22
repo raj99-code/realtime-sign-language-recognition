@@ -1,4 +1,6 @@
+<p align="centre">
 ![This is an image](logo.png)
+</p>
 
 # KnowSign
 
