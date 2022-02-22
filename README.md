@@ -1,3 +1,5 @@
+![This is an image](/assests/images/logo.png)
+
 # KnowSign
 
 Portable sign language (ASL) recognition device that utilizes real-time and efficient programming to help mute and deaf by establishing two-way communication channel with normal people who have never studied sign language.
