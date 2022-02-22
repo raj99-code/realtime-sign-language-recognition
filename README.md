@@ -1,5 +1,5 @@
 <p align="center">
-![This is an image](logo.png)
+<img src="logo.png">
 </p>
 
 # KnowSign
