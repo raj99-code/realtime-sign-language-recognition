@@ -1,5 +1,5 @@
 <p align="center">
-<img src="logo.png">
+<img src="kNOw SIGN-logo.png">
 </p>
 
 # KnowSign
@@ -13,5 +13,5 @@ KnowSign compact design consists of Raspberry Pi 3B, Pi camera (V2.1) and a disp
 
 ### Facebook: https://www.facebook.com/KnowSign
 ### Instagram: https://www.instagram.com/know.sign
-### Twitter: https://twitter.com/KnowSign
+### Twitter: https://twitter.com/Know__Sign
 ### Youtube: https://www.youtube.com/channel/UCDok7kkuFErYF-Gch3gnTTw
