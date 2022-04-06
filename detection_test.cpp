@@ -12,19 +12,44 @@
 using namespace cv;
 
 using namespace std;
+bool proc=false;
 
 
-int main() {
-    
 Mat frame, frameOut, handMask, foreground, fingerCountDebug;    
 
 Mat image, HSV;
 BackgroundRemover backgroundRemover;
 SkinDetector skinDetector;
 
-namedWindow("Display window");
+//namedWindow("Display window");
 
 VideoCapture cap(0);
+
+void process_image(){
+	cap >> image;
+frameOut=image.clone();
+skinDetector.drawSkinColorSampler(frameOut);
+foreground = backgroundRemover.getForeground(image);
+handMask = skinDetector.getSkinMask(foreground);
+bool proc=true;
+namedWindow("Display window");
+
+}
+
+void recognise(){
+	imshow("foreground1", frameOut);
+imshow("foreground2", foreground);
+imshow("foreground3", handMask);
+LetterRecog model("asl_alphabet.onnx");
+Point2f forw = model.forward(image);
+imshow("Live", image);
+cout << "Detected class is: " << forw.x << endl;
+cout << "\n" << endl;
+}
+
+
+int main() {
+    
 
 if (!cap.isOpened()) {
 
@@ -34,23 +59,14 @@ cout << "cannot open camera";
 
 while (true) {
 
-cap >> image;
-frameOut=image.clone();
-skinDetector.drawSkinColorSampler(frameOut);
+if (cap.isOpened()) {
+		process_image();
 
-foreground = backgroundRemover.getForeground(image);
-handMask = skinDetector.getSkinMask(foreground);
-imshow("foreground1", frameOut);
-imshow("foreground2", foreground);
-imshow("foreground3", handMask);
+}
+if (proc=true){
+	recognise();
 
-LetterRecog model("asl_alphabet.onnx");
-
-Point2f forw = model.forward(image);
-imshow("Live", image);
-cout << "Detected class is: " << forw.x << endl;
-cout << "\n" << endl;
-
+}
 
 int key = waitKey(1);
 
