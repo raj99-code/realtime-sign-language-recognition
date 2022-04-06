@@ -31,6 +31,7 @@ KnowSign compact design consists of Raspberry Pi 4B, Pi camera (V2.1) and a disp
 <details>
  <summary> Click to expand!</summary>
  <br>
+ 
 To be added soon!
 </details>
 
@@ -39,6 +40,7 @@ To be added soon!
 <details>
  <summary> Click to expand!</summary>
  <br>
+ 
 To be added soon!
 </details>
 
@@ -47,6 +49,7 @@ To be added soon!
 <details>
  <summary> Click to expand!</summary>
  <br>
+ 
 1. Real-time American sign language recognition 
 2. Sign language to text display
 3. Fast and efficient deep learning algorithm 
@@ -60,6 +63,7 @@ more features will be available soon!
 <details>
  <summary> Click to expand!</summary>
  <br>
+ 
 KnowSign is still under development. The project progress and advancements will be shared regularly on our social media channels below:  
  
  [Facebook ](https://www.facebook.com/KnowSign)    
@@ -73,6 +77,7 @@ KnowSign is still under development. The project progress and advancements will 
 <details>
  <summary> Click to expand!</summary>
  <br>
+ 
   ### a.Prerequisites  
   #### OpenCV 4.5 on Raspberry Pi 4
   ##### Introduction
@@ -352,5 +357,7 @@ $  pkg-config opencv --cflags
 <details>
  <summary> Click to expand!</summary>
  <br>
+ 
+ 
 </details>
  
