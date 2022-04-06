@@ -25,12 +25,12 @@ KnowSign compact design consists of Raspberry Pi 4B, Pi camera (V2.1) and a disp
 
 
 
-
+<details>
 <a name="Project_Demo"></a>
-## 1. Project Demo
+ <summary>## 1. Project Demo</summary>
 
 To be added soon!
-
+</details>
 <a name="flow"></a>
 ## 2. Project Flowchart 
 
