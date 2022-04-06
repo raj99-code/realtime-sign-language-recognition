@@ -28,37 +28,51 @@ KnowSign compact design consists of Raspberry Pi 4B, Pi camera (V2.1) and a disp
 
 <a name="Project_Demo"></a>
 ## 1. Project Demo
-
+<details>
+ <summary> Click to expand!</summary>
+ <br>
 To be added soon!
+</details>
 
 <a name="flow"></a>
 ## 2. Project Flowchart 
-
+<details>
+ <summary> Click to expand!</summary>
+ <br>
 To be added soon!
+</details>
 
 <a name="kNOw_SIGN_Features"></a>
 ## 3. kNOw SIGN Features
-
+<details>
+ <summary> Click to expand!</summary>
+ <br>
 1. Real-time American sign language recognition 
 2. Sign language to text display
 3. Fast and efficient deep learning algorithm 
 4. Portable device for the recognition using Raspberry PI
 
 more features will be available soon!
+</details>
 
 <a name="social_media"></a>
 ## 4. Social Media Channels
- 
+<details>
+ <summary> Click to expand!</summary>
+ <br>
 KnowSign is still under development. The project progress and advancements will be shared regularly on our social media channels below:  
  
  [Facebook ](https://www.facebook.com/KnowSign)    
  [Instagram](https://www.instagram.com/know.sign)    
  [Twitter](https://twitter.com/Know__Sign)  
  [Youtube](https://www.youtube.com/channel/UCDok7kkuFErYF-Gch3gnTTw)  
+</details>
 
 <a name="install"></a>
 ## 5. Installation 
-
+<details>
+ <summary> Click to expand!</summary>
+ <br>
   ### a.Prerequisites  
   #### OpenCV 4.5 on Raspberry Pi 4
   ##### Introduction
@@ -325,7 +339,8 @@ $  pkg-config opencv --cflags
   
   
   ### b.Build from soucre     
-  
+</details>
+ 
 <a name="cont"></a>
 ## 6. Authors 
 <a href="https://github.com/raj99-code/realtime-sign-language-recognition/graphs/contributors">
@@ -334,3 +349,8 @@ $  pkg-config opencv --cflags
 
 <a name="progress"></a>
 ## 7. Project Progress 
+<details>
+ <summary> Click to expand!</summary>
+ <br>
+</details>
+ 
