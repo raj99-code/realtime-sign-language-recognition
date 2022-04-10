@@ -3,5 +3,5 @@ References
 1. ASL using DNN - https://github.com/VedantMistry13/American-Sign-Language-Recognition-using-Deep-Neural-Network
 2. Object detection with deep learning and OpenCV - https://pyimagesearch.com/2017/09/11/object-detection-with-deep-learning-and-opencv/
 3. Install OpenCV 4.5 on Raspberry Pi 4 - https://qengineering.eu/install-opencv-4.5-on-raspberry-pi-4.html
-4. Install Tensorflow Lite on Raspberry Pi 4 - https://qengineering.eu/install-tensorflow-2-lite-on-raspberry-pi-4.html (v2.2.0 for Flatbuffers)
+4. Install Tensorflow Lite on Raspberry Pi 4 - https://qengineering.eu/install-tensorflow-2-lite-on-raspberry-pi-4.html (-b v2.0.0 for Flatbuffers)
 5. Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow - https://github.com/victordibia/handtracking
