@@ -20,7 +20,7 @@ int main(int, char**) {
 		return -1;
 	}
 
-	cv::Mat frame, frameOut, handMask, foreground, fingerCountDebug;
+	cv::Mat frame, frameOut, handMask, foreground, fingerCountDebug,cropped_im;
 
 	BackgroundRemover backgroundRemover;
 	SkinDetector skinDetector;
@@ -46,8 +46,9 @@ int main(int, char**) {
 	
 		cv::imshow("output", frameOut);
 		cv::imshow("foreground", foreground);
-		cv::imshow("handMask", handMask);
-		cv::imshow("handDetection", fingerCountDebug);
+		//cv::imshow("handMask", handMask);
+		//cv::imshow("handDetection", fingerCountDebug);
+		
 		
 		if(fingerCount.getBoundingRectArea() > 0) {
 			boundRect = fingerCount.getBoundingRect();
@@ -59,6 +60,7 @@ int main(int, char**) {
 		} else {
 			cv::imshow("cropped", frameOut);
 		}
+		
 
 		int key = cv::waitKey(1);
 
