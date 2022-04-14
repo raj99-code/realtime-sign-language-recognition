@@ -74,6 +74,9 @@ void waitForPalmCover(MyImage* m){
 		flip(m->src,m->src,1);
 		for(int j=0;j<NSAMPLES;j++){
 			roi[j].draw_rectangle(m->src);
+
+		
+			
 		}
 		string imgText=string("Cover rectangles with palm");
 		printText(m->src,imgText);	
@@ -238,8 +241,12 @@ void myDrawContours(MyImage *m,HandGesture *hg){
 
 
 
+    rectangle(m->src,hg->bRect.tl(),hg->bRect.br(),Scalar(0,0,200));
+	//cv::Rect croppin(hg->bRect.w,hg->bRect.h,Scalar(0,0,200));
+	//cout << hg->bRect.tl();
+	//imshow("img22",hg->bRect);	
 
-	rectangle(m->src,hg->bRect.tl(),hg->bRect.br(),Scalar(0,0,200));
+	
 	vector<Vec4i>::iterator d=hg->defects[hg->cIdx].begin();
 	int fontFace = FONT_HERSHEY_PLAIN;
 		
@@ -310,7 +317,7 @@ int main(){
 	init(&m);		
 	m.cap >>m.src;
     namedWindow("img1",CV_WINDOW_KEEPRATIO);
-	out.open("out.avi", CV_FOURCC('M', 'J', 'P', 'G'), 15, m.src.size(), true);
+	
 	waitForPalmCover(&m);
 	average(&m);
 	destroyWindow("img1");
@@ -327,6 +334,9 @@ int main(){
 		cvtColor(m.srcLR,m.srcLR,COL2ORIGCOL);
 		makeContours(&m, &hg);
 		hg.getFingerNumber(&m);
+			
+		//cv::Mat cropped_im= m.src(cv::Range(50,300),cv::Range(50,330));
+		//cv::imshow("cropped", cropped_im);
 		showWindows(m);
 		out << m.src;
 		//imwrite("./images/final_result.jpg",m.src);
