@@ -41,7 +41,7 @@ string HandGesture::intToString(int number){
 		return str;
 }
 
-void HandGesture::printGestureInfo(Mat src){
+/* void HandGesture::printGestureInfo(Mat src){
 	int fontFace = FONT_HERSHEY_PLAIN;
 	Scalar fColor(245,200,200);
 	int xpos=src.cols/1.5;
@@ -59,7 +59,7 @@ void HandGesture::printGestureInfo(Mat src){
 	xpos+=lineChange;
 	info=string("Is hand: ") + string(bool2string(isHand));
 	putText(src,info,Point(ypos,xpos),fontFace,fontSize  ,fColor);
-}
+} */
 
 bool HandGesture::detectIfHand(){
 	analyzeContours();
@@ -99,7 +99,7 @@ void HandGesture::removeRedundantFingerTips(){
 	fingerTips.swap(newFingers);
 }
 
-void HandGesture::computeFingerNumber(){
+/* void HandGesture::computeFingerNumber(){
 	std::sort(fingerNumbers.begin(), fingerNumbers.end());
 	int frequentNr;	
 	int thisNumberFreq=1;
@@ -119,15 +119,15 @@ void HandGesture::computeFingerNumber(){
 		frequentNr=fingerNumbers[fingerNumbers.size()-1];	
 	}
 	mostFrequentFingerNumber=frequentNr;	
-}
+} */
 
-void HandGesture::addFingerNumberToVector(){
+/* void HandGesture::addFingerNumberToVector(){
 	int i=fingerTips.size();	
 	fingerNumbers.push_back(i);
-}
+} */
 
 // add the calculated number of fingers to image m->src
-void HandGesture::addNumberToImg(MyImage *m){
+/* void HandGesture::addNumberToImg(MyImage *m){
 	int xPos=10;
 	int yPos=10;
 	int offset=30;
@@ -142,11 +142,11 @@ void HandGesture::addNumberToImg(MyImage *m){
 			xPos=10;
 		}
 	}
-}
+} */
 
 // calculate most frequent numbers of fingers 
 // over 20 frames
-void HandGesture::getFingerNumber(MyImage *m){
+/* void HandGesture::getFingerNumber(MyImage *m){
 	removeRedundantFingerTips();
 	if(bRect.height > m->src.rows/2 && nrNoFinger>12 && isHand ){
 		numberColor=Scalar(0,200,0);
@@ -165,7 +165,7 @@ void HandGesture::getFingerNumber(MyImage *m){
 		numberColor=Scalar(200,200,200);
 	}
 	addNumberToImg(m);
-}
+} */
 
 float HandGesture::getAngle(Point s, Point f, Point e){
 	float l1 = distanceP2P(f,s);

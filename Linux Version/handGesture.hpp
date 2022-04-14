@@ -32,7 +32,7 @@ class HandGesture{
 		bool isHand;
 		bool detectIfHand();
 		void initVectors();
-		void getFingerNumber(MyImage *m);
+		//void getFingerNumber(MyImage *m);
 		void eleminateDefects(MyImage *m);
 		void getFingerTips(MyImage *m);
 		void drawFingerTips(MyImage *m);
@@ -45,11 +45,11 @@ class HandGesture{
 		vector<int> fingerNumbers;
 		void analyzeContours();
 		string intToString(int number);
-		void computeFingerNumber();
+		//void computeFingerNumber();
 		void drawNewNumber(MyImage *m);
 		void addNumberToImg(MyImage *m);
 		vector<int> numbers2Display;
-		void addFingerNumberToVector();
+		//void addFingerNumberToVector();
 		Scalar numberColor;
 		int nrNoFinger;
 		float distanceP2P(Point a,Point b);

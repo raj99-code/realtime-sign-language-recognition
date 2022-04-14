@@ -12,6 +12,7 @@
 #include <vector>
 #include <cmath>
 #include "main.hpp"
+#include "RecogModel.h"
 
 using namespace cv;
 using namespace std;
@@ -207,7 +208,7 @@ void produceBinaries(MyImage *m){
 }
 
 void initWindows(MyImage m){
-    namedWindow("trackbars",CV_WINDOW_KEEPRATIO);
+    //namedWindow("trackbars",CV_WINDOW_KEEPRATIO);
     namedWindow("img1",CV_WINDOW_FULLSCREEN);
 }
 
@@ -235,16 +236,26 @@ int findBiggestContour(vector<vector<Point> > contours){
     }
     return indexOfBiggestContour;
 }
+Mat crop(MyImage *m, HandGesture *hg){
+
+      cv::Rect croppin(hg->bRect.tl(),hg->bRect.br());
+	  cv::Mat q=m->src(cv::Rect(hg->bRect.tl(),hg->bRect.br()));
+	 // cv::Mat q;
+	//q.copyTo(m->src(croppin));
+	//cout << hg->bRect.tl();
+	cv::imshow("img22",q);	
+	return q;
+
+}
 
 void myDrawContours(MyImage *m,HandGesture *hg){
-	drawContours(m->src,hg->hullP,hg->cIdx,cv::Scalar(200,0,0),2, 8, vector<Vec4i>(), 0, Point());
+	//drawContours(m->src,hg->hullP,hg->cIdx,cv::Scalar(200,0,0),2, 8, vector<Vec4i>(), 0, Point());
 
 
 
     rectangle(m->src,hg->bRect.tl(),hg->bRect.br(),Scalar(0,0,200));
-	//cv::Rect croppin(hg->bRect.w,hg->bRect.h,Scalar(0,0,200));
-	//cout << hg->bRect.tl();
-	//imshow("img22",hg->bRect);	
+	
+	
 
 	
 	vector<Vec4i>::iterator d=hg->defects[hg->cIdx].begin();
@@ -301,7 +312,7 @@ void makeContours(MyImage *m, HandGesture* hg){
 			hg->eleminateDefects(m);
 		}
 		bool isHand=hg->detectIfHand();
-		hg->printGestureInfo(m->src);
+		//hg->printGestureInfo(m->src);
 		if(isHand){	
 			hg->getFingerTips(m);
 			hg->drawFingerTips(m);
@@ -317,6 +328,8 @@ int main(){
 	init(&m);		
 	m.cap >>m.src;
     namedWindow("img1",CV_WINDOW_KEEPRATIO);
+	 std::vector<std::string> classes = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "del", "nothing", "space"};
+	LetterRecog model("../model/asl_alphabet.onnx");
 	
 	waitForPalmCover(&m);
 	average(&m);
@@ -333,10 +346,14 @@ int main(){
 		produceBinaries(&m);
 		cvtColor(m.srcLR,m.srcLR,COL2ORIGCOL);
 		makeContours(&m, &hg);
-		hg.getFingerNumber(&m);
+		
+		//hg.getFingerNumber(&m);
+		Mat l=crop(&m,&hg);
+		cv::Point2f forw = model.forward(l);
+		std::cout << classes[forw.x] << std::endl;
+		std::cout << "\n" << std::endl;
 			
-		//cv::Mat cropped_im= m.src(cv::Range(50,300),cv::Range(50,330));
-		//cv::imshow("cropped", cropped_im);
+		
 		showWindows(m);
 		out << m.src;
 		//imwrite("./images/final_result.jpg",m.src);
