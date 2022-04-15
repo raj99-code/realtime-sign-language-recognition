@@ -33,14 +33,14 @@ class HandGesture{
 		bool detectIfHand();
 		void initVectors();
 		//void getFingerNumber(MyImage *m);
-		void eleminateDefects(MyImage *m);
+		//void eleminateDefects(MyImage *m);
 		void getFingerTips(MyImage *m);
-		void drawFingerTips(MyImage *m);
+		//void drawFingerTips(MyImage *m);
 	private:
 		string bool2string(bool tf);
 		int fontFace;
 		int prevNrFingerTips;
-		void checkForOneFinger(MyImage *m);
+		//void checkForOneFinger(MyImage *m);
 		float getAngle(Point s,Point f,Point e);	
 		vector<int> fingerNumbers;
 		void analyzeContours();

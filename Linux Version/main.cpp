@@ -240,59 +240,12 @@ Mat crop(MyImage *m, HandGesture *hg){
 
       cv::Rect croppin(hg->bRect.tl(),hg->bRect.br());
 	  cv::Mat q=m->src(cv::Rect(hg->bRect.tl(),hg->bRect.br()));
-	 // cv::Mat q;
-	//q.copyTo(m->src(croppin));
-	//cout << hg->bRect.tl();
 	cv::imshow("img22",q);	
 	return q;
 
 }
 
-void myDrawContours(MyImage *m,HandGesture *hg){
-	//drawContours(m->src,hg->hullP,hg->cIdx,cv::Scalar(200,0,0),2, 8, vector<Vec4i>(), 0, Point());
 
-
-
-    rectangle(m->src,hg->bRect.tl(),hg->bRect.br(),Scalar(0,0,200));
-	
-	
-
-	
-	vector<Vec4i>::iterator d=hg->defects[hg->cIdx].begin();
-	int fontFace = FONT_HERSHEY_PLAIN;
-		
-	
-	vector<Mat> channels;
-		Mat result;
-		for(int i=0;i<3;i++)
-			channels.push_back(m->bw);
-		merge(channels,result);
-	//	drawContours(result,hg->contours,hg->cIdx,cv::Scalar(0,200,0),6, 8, vector<Vec4i>(), 0, Point());
-		drawContours(result,hg->hullP,hg->cIdx,cv::Scalar(0,0,250),10, 8, vector<Vec4i>(), 0, Point());
-
-		
-	while( d!=hg->defects[hg->cIdx].end() ) {
-   	    Vec4i& v=(*d);
-	    int startidx=v[0]; Point ptStart(hg->contours[hg->cIdx][startidx] );
-   		int endidx=v[1]; Point ptEnd(hg->contours[hg->cIdx][endidx] );
-  	    int faridx=v[2]; Point ptFar(hg->contours[hg->cIdx][faridx] );
-	    float depth = v[3] / 256;
-   /*	
-		line( m->src, ptStart, ptFar, Scalar(0,255,0), 1 );
-	    line( m->src, ptEnd, ptFar, Scalar(0,255,0), 1 );
-   		circle( m->src, ptFar,   4, Scalar(0,255,0), 2 );
-   		circle( m->src, ptEnd,   4, Scalar(0,0,255), 2 );
-   		circle( m->src, ptStart,   4, Scalar(255,0,0), 2 );
-*/
-   		circle( result, ptFar,   9, Scalar(0,205,0), 5 );
-		
-		
-	    d++;
-
-   	 }
-//	imwrite("./images/contour_defects_before_eliminate.jpg",result);
-
-}
 
 void makeContours(MyImage *m, HandGesture* hg){
 	Mat aBw;
@@ -307,16 +260,16 @@ void makeContours(MyImage *m, HandGesture* hg){
 		convexHull(Mat(hg->contours[hg->cIdx]),hg->hullP[hg->cIdx],false,true);
 		convexHull(Mat(hg->contours[hg->cIdx]),hg->hullI[hg->cIdx],false,false);
 		approxPolyDP( Mat(hg->hullP[hg->cIdx]), hg->hullP[hg->cIdx], 18, true );
-		if(hg->contours[hg->cIdx].size()>3 ){
+	/* 	if(hg->contours[hg->cIdx].size()>3 ){
 			convexityDefects(hg->contours[hg->cIdx],hg->hullI[hg->cIdx],hg->defects[hg->cIdx]);
 			hg->eleminateDefects(m);
-		}
+		} */
 		bool isHand=hg->detectIfHand();
 		//hg->printGestureInfo(m->src);
 		if(isHand){	
-			hg->getFingerTips(m);
-			hg->drawFingerTips(m);
-			myDrawContours(m,hg);
+			//hg->getFingerTips(m);
+			//hg->drawFingerTips(m);
+			//myDrawContours(m,hg);
 		}
 	}
 }
