@@ -5,3 +5,7 @@ References
 3. Install OpenCV 4.5 on Raspberry Pi 4 - https://qengineering.eu/install-opencv-4.5-on-raspberry-pi-4.html
 4. Install Tensorflow Lite on Raspberry Pi 4 - https://qengineering.eu/install-tensorflow-2-lite-on-raspberry-pi-4.html (-b v2.0.0 for Flatbuffers)
 5. Real-time Hand-Detection using Neural Networks (SSD) on Tensorflow - https://github.com/victordibia/handtracking
+6. Handy - https://github.com/PierfrancescoSoffritti/handy
+7. Hand Detection using Color Recognition - https://github.com/simenandresen/handDetectionCV
+8. OLED Display Driver - https://hallard.me/adafruit-oled-display-driver-for-pi/
+9. ArduiPi_OLED - https://github.com/hallard/ArduiPi_OLED
