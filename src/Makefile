@@ -4,5 +4,5 @@
 #export PKG_CONFIG_PATH
 
 all:
-	g++ -pthread -o opencv main.cpp myImage.cpp handGesture.cpp roi.cpp  `pkg-config --cflags --libs opencv4` 
+	g++  -std=c++11 -pthread -o opencv main.cpp handDetect.cpp RecogModel.cpp myImage.cpp handGesture.cpp roi.cpp  `pkg-config --cflags --libs opencv4` 
 

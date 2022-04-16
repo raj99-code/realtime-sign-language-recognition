@@ -8,23 +8,23 @@
 #include "main.hpp"
 #include "myImage.hpp"
 
-using namespace cv;
+
 using namespace std;
 
 class HandGesture{
 	public:
 		MyImage m;
 		HandGesture();
-		vector<vector<Point> > contours;
+		vector<vector<cv::Point> > contours;
 		vector<vector<int> >hullI;
-		vector<vector<Point> >hullP;
+		vector<vector<cv::Point> >hullP;
 
-		Rect rect;
+		cv::Rect rect;
 	
 		int cIdx;
 		int frameNumber;
 	
-		Rect bRect;
+		cv::Rect bRect;
 		double bRect_width;
 		double bRect_height;
 		bool isHand;

@@ -7,18 +7,18 @@
 #include <iostream>
 #include <string>
 
-using namespace cv;
+
 using namespace std;
 
 HandGesture::HandGesture(){
 	frameNumber=0;
 	
-	fontFace = FONT_HERSHEY_PLAIN;
+	fontFace = cv::FONT_HERSHEY_PLAIN;
 }
 
 void HandGesture::initVectors(){
 	hullI=vector<vector<int> >(contours.size());
-	hullP=vector<vector<Point> >(contours.size());
+	hullP=vector<vector<cv::Point> >(contours.size());
 	
 }
 

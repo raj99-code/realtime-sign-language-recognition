@@ -6,17 +6,17 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include<opencv2/opencv.hpp>
 
-using namespace cv;
+
 
 class My_ROI{
 	public:
 		My_ROI();
-		My_ROI(Point upper_corner, Point lower_corner,Mat src);
-		Point upper_corner, lower_corner;
-		Mat roi_ptr;
-		Scalar color;
+		My_ROI(cv::Point upper_corner, cv::Point lower_corner,cv::Mat src);
+		cv::Point upper_corner, lower_corner;
+		cv::Mat roi_ptr;
+		cv::Scalar color;
 		int border_thickness;
-		void draw_rectangle(Mat src);
+		void draw_rectangle(cv::Mat src);
 };
 
 
