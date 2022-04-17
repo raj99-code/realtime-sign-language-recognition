@@ -4,5 +4,4 @@
 #export PKG_CONFIG_PATH
 
 all:
-	g++ -pthread main.cpp myImage.cpp handGesture.cpp roi.cpp -lArduiPi_OLED -o opencv `pkg-config --cflags --libs opencv4` 
-
+	g++ -pthread -std=c++11 main.cpp handDetect.cpp RecogModel.cpp myImage.cpp handGesture.cpp roi.cpp led_display.cpp -lArduiPi_OLED -o opencv `pkg-config --cflags --libs opencv4`

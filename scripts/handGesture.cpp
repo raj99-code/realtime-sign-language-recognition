@@ -7,18 +7,15 @@
 #include <iostream>
 #include <string>
 
-using namespace cv;
-using namespace std;
 
 HandGesture::HandGesture(){
-	frameNumber=0;
-	
-	fontFace = FONT_HERSHEY_PLAIN;
+	frameNumber = 0;	
+	fontFace = cv::FONT_HERSHEY_PLAIN;
 }
 
 void HandGesture::initVectors(){
-	hullI=vector<vector<int> >(contours.size());
-	hullP=vector<vector<Point> >(contours.size());
+	hullI = std::vector<std::vector<int> >(contours.size());
+	hullP = std::vector<std::vector<cv::Point> >(contours.size());
 	
 }
 
@@ -26,8 +23,6 @@ void HandGesture::analyzeContours(){
 	bRect_height=bRect.height;
 	bRect_width=bRect.width;
 }
-
-
 
 bool HandGesture::detectIfHand(){
 	analyzeContours();
@@ -43,10 +38,3 @@ bool HandGesture::detectIfHand(){
 	}	
 	return isHand;
 }
-
-
-
-
-
-
-

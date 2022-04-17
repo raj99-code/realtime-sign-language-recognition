@@ -2,29 +2,27 @@
 #define _HAND_GESTURE_ 
 
 #include <opencv2/imgproc/imgproc.hpp>
-#include<opencv2/opencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <vector>
 #include <string>
-#include "main.hpp"
 #include "myImage.hpp"
+#include "main.hpp"
 
-using namespace cv;
-using namespace std;
 
 class HandGesture{
 	public:
 		MyImage m;
 		HandGesture();
-		vector<vector<Point> > contours;
-		vector<vector<int> >hullI;
-		vector<vector<Point> >hullP;
+		std::vector<std::vector<cv::Point> > contours;
+		std::vector<std::vector<int> >hullI;
+		std::vector<std::vector<cv::Point> >hullP;
 
-		Rect rect;
+		cv::Rect rect;
 	
 		int cIdx;
 		int frameNumber;
 	
-		Rect bRect;
+		cv::Rect bRect;
 		double bRect_width;
 		double bRect_height;
 		bool isHand;
