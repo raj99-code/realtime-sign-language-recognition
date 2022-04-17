@@ -9,3 +9,4 @@ References
 7. Hand Detection using Color Recognition - https://github.com/simenandresen/handDetectionCV
 8. OLED Display Driver - https://hallard.me/adafruit-oled-display-driver-for-pi/
 9. ArduiPi_OLED - https://github.com/hallard/ArduiPi_OLED
+10. Mask Detection (for reference) - https://github.com/jwdinius/yolov4-mask-detector
