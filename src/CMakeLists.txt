@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.1)
+set (CMAKE_CXX_STANDARD 11)
+project( kNOw_SIGN )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( kNOw_SIGN main.cpp handDetect.cpp RecogModel.cpp FrameGen.cpp InterHand.cpp roi.cpp )
+target_link_libraries( kNOw_SIGN ${OpenCV_LIBS} )

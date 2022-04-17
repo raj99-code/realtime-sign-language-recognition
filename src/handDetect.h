@@ -6,18 +6,18 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-#include "myImage.hpp"
+#include "FrameGen.hpp"
 #include "roi.hpp"
-#include "handGesture.hpp"
+#include "InterHand.hpp"
 #include <vector>
 #include <cmath>
 
 
+/**
+  @brief Class to detect the hand from a video stream using thresholding and contours
 
+*/
 
-using namespace std;
-
-/* Global Variables  */
 
 
 class handDetect{
@@ -25,22 +25,106 @@ class handDetect{
     public:
 
     handDetect();
-    void init(MyImage *m);
-    void waitForPalmCover(MyImage* m);
-    void average(MyImage *m);
+
+
+ /**
+  @brief Function to take the initial video stream and specify the area of calibrartion squares
+*/
+
+
+    void init(FrameGen *m);
+
+
+   /**
+   * @brief specify the location of the calibration squares on the incoming frame and draw them 
+   * 
+   *
+   */
+
+    void waitForPalmCover(FrameGen* m);
+
+   /**
+   * @brief calculate the final average color of the hand in hue lightness saturation space based on 
+   * average skin color from the calibration squares to find the threshold and detect the hand.
+   *
+   */
+
+    void average(FrameGen *m);
+
+   /**
+   * @brief create trackbars to be able to manually adjust the threshold if needed. To use the trackbars, 
+   * umcomment the function in the main file.
+   *
+   */   
+
     void initTrackbars();
-    void produceBinaries(MyImage *m);
-    cv::Mat crop(MyImage *m, HandGesture *hg);
-    void makeContours(MyImage *m, HandGesture* hg);
+
+   /**
+   * @brief getting the lower and upper boundries of the hand color. the function calculate these boundries
+   * based on the average color from the calibration squares after normalization and then perform median Blur to remove the noise
+   *
+   */
+    void produceBinaries(FrameGen *m);
+
+   /**
+   * @brief crop the detected hand area of each frame and store it in Mat object to be fed to the inference model
+   * 
+   *
+   */
+    cv::Mat crop(FrameGen *m, InterHand *hg);
+
+   /**
+   * @brief create contours for the hand from the incoming frame to get the hand location and detect the hand
+   * 
+   *
+   */
+    void makeContours(FrameGen *m, InterHand* hg);
 
     private:
+
+   /**
+   * @brief convert the frame color to the original color from two input color spaces 
+   * 
+   *
+   */
    
     void col2origCol(int hsv[3], int bgr[3], cv::Mat src);
-    void printText(cv::Mat src, string text);
-    int getMedian(vector<int> val);
-    void getAvgColor(MyImage *m,My_ROI roi,int avg[3]);
-    void normalizeColors(MyImage * myImage);
-    int findBiggestContour(vector<vector<cv::Point> > contours);
+
+   /**
+   * @brief function to print text on the frame when needed
+   * 
+   *
+   */
+    
+    void printText(cv::Mat src, std::string text);
+
+   /**
+   * @brief calculate the median value of the color averaging results 
+   * 
+   *
+   */
+    int getMedian(std::vector<int> val);
+
+   /**
+   * @brief aquire the average hand skin color from the calibration squares
+   * 
+   *
+   */
+    void getAvgColor(FrameGen *m,My_ROI roi,int avg[3]);
+
+    /**
+   * @brief get the color boundries and normalize them to 0-255
+   * 
+   *
+   */
+    void normalizeColors(FrameGen * myImage);
+
+    /**
+   * @brief get the biggest contours and remove the cotours that do not represent hands
+   * 
+   *
+   */
+    int findBiggestContour(std::vector<std::vector<cv::Point>> contours);
    
    
 

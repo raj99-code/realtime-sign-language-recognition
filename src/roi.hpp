@@ -2,12 +2,15 @@
 #ifndef ROI 
 #define ROI
 
-
 #include <opencv2/imgproc/imgproc.hpp>
 #include<opencv2/opencv.hpp>
 
 
-
+	/**
+   * @brief Class for drawing region of interest
+   * 
+   *
+   */
 class My_ROI{
 	public:
 		My_ROI();
@@ -16,6 +19,12 @@ class My_ROI{
 		cv::Mat roi_ptr;
 		cv::Scalar color;
 		int border_thickness;
+
+			/**
+   * @brief Draw rectangles on the frame using corner points.
+   * 
+   *
+   */
 		void draw_rectangle(cv::Mat src);
 };
 

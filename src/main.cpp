@@ -1,35 +1,36 @@
-#include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/imgproc/types_c.h"
-#include "opencv2/highgui/highgui_c.h"
-#include <opencv2/opencv.hpp>
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-#include <string>
-#include "myImage.hpp"
+
+
+/* #include "ArduiPi_OLED_lib.h"
+#include "Adafruit_GFX.h"
+#include "ArduiPi_OLED.h"
+ */
+#include "FrameGen.hpp"
 #include "roi.hpp"
-#include "handGesture.hpp"
-#include <vector>
-#include <cmath>
+//#include "InterHand.hpp"
 #include "main.hpp"
 #include "RecogModel.h"
-#include <pthread.h>
 #include "handDetect.h"
+//#include "led_display.hpp"
 
+/**
+  @brief Function to initialize live camera stream and trackbars windows
+*/
 
-using namespace std;
-
-
-void initWindows(MyImage m){
-    //namedWindow("trackbars",CV_WINDOW_KEEPRATIO);
+void initWindows(FrameGen m){
+    //namedWindow("trackbars",CV_WINDOW_KEEPRATIO); ///< trackbars to adjust the threshold manually for hand segmentation
     cv::namedWindow("img1",CV_WINDOW_FULLSCREEN);
 }
 
-void showWindows(MyImage m){
+
+/**
+  @brief Function to show the the live camera stream and the thresholding result in smaller window 
+*/
+
+void showWindows(FrameGen m){
+	cv::pyrDown(m.bw,m.bw); ///< redcuing the shown thresholded image size using Gaussian pyramids 
 	cv::pyrDown(m.bw,m.bw);
-	cv::pyrDown(m.bw,m.bw);
-	cv::Rect roi( cv::Point( 3*m.src.cols/4,0 ), m.bw.size());
-	vector<cv::Mat> channels;
+	cv::Rect roi( cv::Point( 3*m.src.cols/4,0 ), m.bw.size()); ///< defining the location of the thresholded image in the original window
+	std::vector<cv::Mat> channels;
 	cv::Mat result;
 	for(int i=0;i<3;i++)
 		channels.push_back(m.bw);
@@ -41,15 +42,14 @@ void showWindows(MyImage m){
 
 
 int main(){
-	pthread_t thread1, thread2;
-	// Mat iret1 = pthread_create( &thread1, NULL,function<void(Mat)> m,NULL);
-	MyImage m(0);		
-	HandGesture hg;
+	
+	FrameGen m(0);		
+	InterHand hg;
 	handDetect hd;
 	hd.init(&m);		
 	m.cap >>m.src;
     cv::namedWindow("img1",CV_WINDOW_KEEPRATIO);
-	 std::vector<std::string> classes = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "del", "nothing", "space"};
+	std::vector<char> classes = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '<', '_', ' '};
 	LetterRecog model("../model/asl_alphabet.onnx");
 	
 	hd.waitForPalmCover(&m);
@@ -57,6 +57,8 @@ int main(){
 	cv::destroyWindow("img1");
 	initWindows(m);
 	hd.initTrackbars();
+	// LedDisplay display;
+	
 	for(;;){
 		
 		m.cap >> m.src;
@@ -72,15 +74,15 @@ int main(){
 		cv::Point2f forw = model.forward(l);
 		std::cout << classes[forw.x] << std::endl;
 		std::cout << "\n" << std::endl;
+		//display.addChar(classes[forw.x]);
 			
 		
 		showWindows(m);
-		//out << m.src;
-		//imwrite("./images/final_result.jpg",m.src);
+		
     	if(cv::waitKey(30) == char('q')) break;
 	}
 	cv::destroyAllWindows();
-	//out.release();
+	
 	m.cap.release();
     return 0;
 }

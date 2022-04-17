@@ -1,28 +1,32 @@
 #include "handDetect.h"
 
+/**
+   * @brief Global variables used in the hand detection class
+   * 
+   *
+   */
+
 int fontFace = cv::FONT_HERSHEY_PLAIN;
 int square_len;
 int avgColor[NSAMPLES][3] ;
 int c_lower[NSAMPLES][3];
 int c_upper[NSAMPLES][3];
 int avgBGR[3];
-int nrOfDefects;
-int iSinceKFInit;
-struct dim{int w; int h;}boundingDim;
+
 
 cv::Mat edges;
 My_ROI roi1, roi2,roi3,roi4,roi5,roi6;
-vector <My_ROI> roi;
-vector <cv::KalmanFilter> kf;
-vector <cv::Mat_<float> > measurement;
+std::vector <My_ROI> roi;
+
+std::vector <cv::Mat_<float> > measurement;
 
 handDetect::handDetect(){
 
 }
 
-void handDetect::init(MyImage *m){
+void handDetect::init(FrameGen *m){
 	square_len=20;
-	iSinceKFInit=0;
+	
 }
 
 void handDetect::col2origCol(int hsv[3], int bgr[3], cv::Mat src){
@@ -36,12 +40,12 @@ void handDetect::col2origCol(int hsv[3], int bgr[3], cv::Mat src){
 	}
 }
 
-void handDetect::printText(cv::Mat src, string text){
+void handDetect::printText(cv::Mat src, std::string text){
 	int fontFace =cv::FONT_HERSHEY_PLAIN;
 	putText(src,text,cv::Point(src.cols/2, src.rows/10),fontFace, 1.2f,cv::Scalar(200,0,0),2);
 }
 
-void handDetect::waitForPalmCover(MyImage* m){
+void handDetect::waitForPalmCover(FrameGen* m){
     m->cap >> m->src;
 	flip(m->src,m->src,1);
 	roi.push_back(My_ROI(cv::Point(m->src.cols/3, m->src.rows/6),cv::Point(m->src.cols/3+square_len,m->src.rows/6+square_len),m->src));
@@ -57,25 +61,20 @@ void handDetect::waitForPalmCover(MyImage* m){
     	m->cap >> m->src;
 		flip(m->src,m->src,1);
 		for(int j=0;j<NSAMPLES;j++){
-			roi[j].draw_rectangle(m->src);
-
-		
-			
+			roi[j].draw_rectangle(m->src);			
 		}
-		string imgText=string("Cover rectangles with palm");
-		printText(m->src,imgText);	
+		std::string imgText = std::string("Cover rectangles with palm");
+		printText(m->src, imgText);	
 		
-		if(i==30){
-		//	imwrite("./images/waitforpalm1.jpg",m->src);
-		}
-
+		
 		imshow("img1", m->src);
-		//out << m->src;
-        if(cv::waitKey(30) >= 0) break;
+		 if(cv::waitKey(30) >= 0) break;
+		
+       
 	}
 }
 
-int handDetect::getMedian(vector<int> val){
+int handDetect::getMedian(std::vector<int> val){
   int median;
   size_t size = val.size();
   sort(val.begin(), val.end());
@@ -87,13 +86,13 @@ int handDetect::getMedian(vector<int> val){
   return median;
 }
 
-void handDetect::getAvgColor(MyImage *m,My_ROI roi,int avg[3]){
+void handDetect::getAvgColor(FrameGen *m,My_ROI roi,int avg[3]){
 	cv::Mat r;
 	roi.roi_ptr.copyTo(r);
-	vector<int>hm;
-	vector<int>sm;
-	vector<int>lm;
-	// generate vectors
+	std::vector<int>hm;
+	std::vector<int>sm;
+	std::vector<int>lm;
+	// generate std::vectors
 	for(int i=2; i<r.rows-2; i++){
     	for(int j=2; j<r.cols-2; j++){
     		hm.push_back(r.data[r.channels()*(r.cols*i + j) + 0]) ;
@@ -106,7 +105,7 @@ void handDetect::getAvgColor(MyImage *m,My_ROI roi,int avg[3]){
 	avg[2]=getMedian(lm);
 }
 
-void handDetect::average(MyImage *m){
+void handDetect::average(FrameGen *m){
 	m->cap >> m->src;
 	flip(m->src,m->src,1);
 	for(int i=0;i<30;i++){
@@ -118,10 +117,11 @@ void handDetect::average(MyImage *m){
 			roi[j].draw_rectangle(m->src);
 		}	
 		cvtColor(m->src,m->src,COL2ORIGCOL);
-		string imgText=string("Finding average color of hand");
+		std::string imgText = std::string("Finding average color of hand");
 		printText(m->src,imgText);	
 		imshow("img1", m->src);
-        if(cv::waitKey(30) >= 0) break;
+		 if(cv::waitKey(30) >= 0) break;
+        
 	}
 }
 
@@ -142,17 +142,15 @@ void handDetect::initTrackbars(){
 	cv::createTrackbar("upper3","trackbars",&c_upper[0][2],255);
 }
 
-void handDetect::normalizeColors(MyImage * myImage){
-	// copy all boundries read from trackbar
-	// to all of the different boundries
+void handDetect::normalizeColors(FrameGen * myImage){
+
 	for(int i=1;i<NSAMPLES;i++){
 		for(int j=0;j<3;j++){
 			c_lower[i][j]=c_lower[0][j];	
 			c_upper[i][j]=c_upper[0][j];	
 		}	
 	}
-	// normalize all boundries so that 
-	// threshold is whithin 0-255
+
 	for(int i=0;i<NSAMPLES;i++){
 		if((avgColor[i][0]-c_lower[i][0]) <0){
 			c_lower[i][0] = avgColor[i][0] ;
@@ -170,7 +168,7 @@ void handDetect::normalizeColors(MyImage * myImage){
 	}
 }
 
-void handDetect::produceBinaries(MyImage *m){	
+void handDetect::produceBinaries(FrameGen *m){	
 	cv::Scalar lowerBound;
 	cv::Scalar upperBound;
 	cv::Mat foo;
@@ -188,7 +186,7 @@ void handDetect::produceBinaries(MyImage *m){
 	medianBlur(m->bw, m->bw,7);
 }
 
-int handDetect::findBiggestContour(vector<vector<cv::Point> > contours){
+int handDetect::findBiggestContour(std::vector<std::vector<cv::Point> > contours){
     int indexOfBiggestContour = -1;
     int sizeOfBiggestContour = 0;
     for (int i = 0; i < contours.size(); i++){
@@ -199,7 +197,7 @@ int handDetect::findBiggestContour(vector<vector<cv::Point> > contours){
     }
     return indexOfBiggestContour;
 }
-cv::Mat handDetect::crop(MyImage *m, HandGesture *hg){
+cv::Mat handDetect::crop(FrameGen *m, InterHand *hg){
 
       cv::Rect croppin(hg->bRect.tl(),hg->bRect.br());
 	  cv::Mat q=m->src(cv::Rect(hg->bRect.tl(),hg->bRect.br()));
@@ -210,19 +208,14 @@ cv::Mat handDetect::crop(MyImage *m, HandGesture *hg){
 
 
 
-void handDetect::makeContours(MyImage *m, HandGesture* hg){
+void handDetect::makeContours(FrameGen *m, InterHand* hg){
 	cv::Mat aBw;
 	cv::pyrUp(m->bw,m->bw);
 	m->bw.copyTo(aBw);
 	findContours(aBw,hg->contours,CV_RETR_EXTERNAL,CV_CHAIN_APPROX_NONE);
-	hg->initVectors(); 
 	hg->cIdx=findBiggestContour(hg->contours);
 	if(hg->cIdx!=-1){
 		hg->bRect=boundingRect(cv::Mat(hg->contours[hg->cIdx]));		
-		convexHull(cv::Mat(hg->contours[hg->cIdx]),hg->hullP[hg->cIdx],false,true);
-		convexHull(cv::Mat(hg->contours[hg->cIdx]),hg->hullI[hg->cIdx],false,false);
-		approxPolyDP( cv::Mat(hg->hullP[hg->cIdx]), hg->hullP[hg->cIdx], 18, true );
-	
 		bool isHand=hg->detectIfHand();
 		
 	

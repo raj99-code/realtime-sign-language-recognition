@@ -1,7 +1,5 @@
 #include "RecogModel.h"
 
-
-
 LetterRecog::LetterRecog(const std::string &path) {
 	this->loadModel(path);
 	this->net.setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
