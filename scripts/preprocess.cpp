@@ -1,4 +1,3 @@
-#include "myImage.hpp"
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -7,16 +6,10 @@
 #include <iostream>
 #include <string>
 
+#include "preprocess.hpp"
 
-MyImage::MyImage(){
-}
 
-MyImage::MyImage(int webCamera){
-	cameraSrc = webCamera;
-	cap = cv::VideoCapture(webCamera);
-}
-
-MyImage::MyImage(cv::Mat &src){
+Preprocess::Preprocess(cv::Mat &src){
 	cv::flip(src, this->src, 1);
 	cv::pyrDown(this->src, this->srcLR);
 	cv::blur(this->srcLR, this->srcLR, cv::Size(3,3));

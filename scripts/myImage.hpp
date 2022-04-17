@@ -9,6 +9,7 @@
 class MyImage{
 	public:
 		MyImage(int webCamera);
+		MyImage(cv::Mat &src);
 		MyImage();
 		cv::Mat srcLR;
 		
