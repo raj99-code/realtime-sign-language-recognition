@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['makecontours',['makeContours',['../classhandDetect.html#a1f4f337c08f32f216a35142b1e08454d',1,'handDetect']]],
-  ['my_5froi',['My_ROI',['../classMy__ROI.html',1,'']]],
-  ['myimage',['MyImage',['../classMyImage.html',1,'MyImage'],['../classMyImage.html#af70f7aa11d987232eb5fe00347745255',1,'MyImage::MyImage()']]]
+  ['handdetect',['handDetect',['../classhandDetect.html',1,'handDetect'],['../classhandDetect.html#a32410cdaddace5daca5360c47a7a1268',1,'handDetect::handDetect()']]],
+  ['handdetect_2ecpp',['handDetect.cpp',['../handDetect_8cpp.html',1,'']]],
+  ['handdetect_2eh',['handDetect.h',['../handDetect_8h.html',1,'']]]
 ];

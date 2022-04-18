@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['init',['init',['../classhandDetect.html#ac6dc04a61c89285d3de73340bd644437',1,'handDetect']]],
-  ['inittrackbars',['initTrackbars',['../classhandDetect.html#a7a2ca26314d1cf6da2c321cc77d5e952',1,'handDetect']]],
-  ['initvectors',['initVectors',['../classInterHand.html#a04f9af5ea3e20a8a360c6858a6b23447',1,'InterHand']]]
+  ['forward',['forward',['../classLetterRecog.html#af4a297503603cf321413fa197d5e7141',1,'LetterRecog']]],
+  ['framegen',['FrameGen',['../classFrameGen.html#ac5f7b027e309f67363ab7ea51203a8c7',1,'FrameGen::FrameGen(int Camera)'],['../classFrameGen.html#a549792c6c2280e330bb291ded2463820',1,'FrameGen::FrameGen()']]]
 ];

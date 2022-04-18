@@ -12,6 +12,49 @@
 #include "handDetect.h"
 //#include "led_display.hpp"
 
+/*! \mainpage kNOw SIGN Source Code Documentation
+ *
+ * \section intro_sec Introduction
+ *
+ * kNOw SIGN is a sign language (ASL) recognition project that utilizes real-time and efficient programming to help 
+ * mute and deaf by establishing two-way communication channel with normal people who have never studied sign language. 
+ * 
+ * Source Code documentation is explained here, for more information about the project please visit <a href="https://github.com/raj99-code/realtime-sign-language-recognition"> kNOw SIGN</a>
+
+ * \section struct_sec Project Structure
+ * The project has 3 main parts to achieve the recognition process:
+
+ 1. The hand detection part where all the frame pre-processing needed for recognition is done.
+ 2. The recognition part which is responsible for using the deep learning model to inference the letters recognized by hand gestures.
+ 3. The display section (Raspberry Pi version only) which handels the output of the recognition resuls to the OLED dispaly
+ *
+
+ \section stage_sec Processing Stages
+
+ The project involves several stages to produce the recognition results and each stage is done but one or more functions of the program. These stages are done by:
+
+ 1. FrameGen
+ 2. handDetect
+ 3. InterHand
+ 4. My_ROI
+ 5. LetterRecog
+ 6. LedDisplay
+
+ The description of these stages is explained in detailes in the individual class documentation.
+
+ \section res_sec Resources
+ 
+ - <a href="https://github.com/raj99-code/realtime-sign-language-recognition"> Github</a>
+ - <a href="https://raj99-code.github.io/realtime-sign-language-recognition"> kNOw SIGN Page</a>
+ 
+
+
+ * 
+ *
+ * 
+ */
+
+
 /**
   @brief Function to initialize live camera stream and trackbars windows
 */
@@ -74,6 +117,7 @@ int main(){
 		cv::Point2f forw = model.forward(l);
 		std::cout << classes[forw.x] << std::endl;
 		std::cout << "\n" << std::endl;
+		
 		//display.addChar(classes[forw.x]);
 			
 		

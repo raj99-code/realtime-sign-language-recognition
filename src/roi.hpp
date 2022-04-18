@@ -7,7 +7,8 @@
 
 
 	/**
-   * @brief Class for drawing region of interest
+   * @brief Class for drawing region of interest. 
+   The functions and variables of this class are used to draw region of interest rectangles during the hand detection process.
    * 
    *
    */

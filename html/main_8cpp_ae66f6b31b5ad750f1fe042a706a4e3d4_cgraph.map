@@ -1,0 +1,14 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classhandDetect.html#a57d105f9b12e6c6b1dbb92dc803cd911" title="Function to take the initial video stream and specify the area of calibrartion squares. " alt="" coords="149,5,264,32"/>
+<area shape="rect" id="node3" href="$classhandDetect.html#a29a4db9312f0cd9295983b996dd14e14" title="specify the location of the calibration squares on the incoming frame and draw them ..." alt="" coords="104,56,309,83"/>
+<area shape="rect" id="node4" href="$classhandDetect.html#ae357197d26c94fdbe0e29f1ce96eb146" title="calculate the final average color of the hand in hue lightness saturation space based on average skin..." alt="" coords="135,107,278,133"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a5cce5f09c7797ad82029a753a434a511" title="Function to initialize live camera stream and trackbars windows. " alt="" coords="160,157,253,184"/>
+<area shape="rect" id="node7" href="$classhandDetect.html#a7a2ca26314d1cf6da2c321cc77d5e952" title="create trackbars to be able to manually adjust the threshold if needed. To use the trackbars..." alt="" coords="121,208,293,235"/>
+<area shape="rect" id="node8" href="$classhandDetect.html#ae0b4be20cc67360ebdf6828f78bcc9a3" title="getting the lower and upper boundries of the hand color. the function calculate these boundries based..." alt="" coords="111,259,302,285"/>
+<area shape="rect" id="node9" href="$classhandDetect.html#a35f575cfb5b4702e9da8bf4c7a0c8b83" title="create contours for the hand from the incoming frame to get the hand location and detect the hand ..." alt="" coords="115,309,298,336"/>
+<area shape="rect" id="node11" href="$classhandDetect.html#a72ec8e109f187092009bd1a1e4abe04d" title="crop the detected hand area of each frame and store it in Mat object to be fed to the inference model..." alt="" coords="145,360,268,387"/>
+<area shape="rect" id="node12" href="$classLetterRecog.html#af4a297503603cf321413fa197d5e7141" title="LetterRecog::forward" alt="" coords="135,411,279,437"/>
+<area shape="rect" id="node13" href="$main_8cpp.html#ad19c3da74cf2f4972034b23d0e9e2413" title="Function to show the the live camera stream and the thresholding result in smaller window..." alt="" coords="153,461,260,488"/>
+<area shape="rect" id="node5" href="$classMy__ROI.html#a9cd951231b376a555c914ac225df367a" title="Draw rectangles on the frame using corner points. " alt="" coords="357,107,524,133"/>
+<area shape="rect" id="node10" href="$classInterHand.html#aed1e3dd25f07b8dd0029e697c2b9e2a4" title="return the results of the hand detection " alt="" coords="359,309,522,336"/>
+</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['letterrecog',['LetterRecog',['../classLetterRecog.html#ac191e80125195253af5350e42c277d55',1,'LetterRecog']]]
+  ['handdetect',['handDetect',['../classhandDetect.html#a32410cdaddace5daca5360c47a7a1268',1,'handDetect']]]
 ];

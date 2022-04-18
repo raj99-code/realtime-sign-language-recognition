@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dim',['dim',['../structdim.html',1,'']]]
+  ['framegen',['FrameGen',['../classFrameGen.html',1,'']]]
 ];

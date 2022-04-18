@@ -14,7 +14,11 @@
 
 
 /**
-  @brief Class to detect the hand from a video stream using thresholding and contours
+  @brief Class to detect the hand from a video stream using thresholding and contours.
+
+  Firstly, the skin color is sampled through several squares in the frame in different locations. Next, the average of these samples is taken and the resulting 
+  values are transformed into HLS. After that, contours are calculated and the biggest contour is considered as the hand. The hand area is then calculated and 
+  the cropped to be fed to the inference core.
 
 */
 
@@ -24,7 +28,7 @@ class handDetect{
 
     public:
 
-    handDetect();
+    handDetect(); ///< constructor
 
 
  /**

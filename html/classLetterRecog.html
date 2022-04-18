@@ -66,26 +66,77 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>class for sign language recognition. An ONNX model is loaded to be used for inference to recognize sign language alphabet  
+<p>Class for sign language recognition. An ONNX model is loaded to be used for inference to recognize sign language alphabet and then the incoming frame is normalized. Next, the frame is forwarded to the model to extract features and output the inference result.  
  <a href="classLetterRecog.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RecogModel_8h_source.html">RecogModel.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for LetterRecog:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLetterRecog__coll__graph.png" border="0" usemap="#LetterRecog_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac191e80125195253af5350e42c277d55"><td class="memItemLeft" align="right" valign="top"><a id="ac191e80125195253af5350e42c277d55"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLetterRecog.html#ac191e80125195253af5350e42c277d55">LetterRecog</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:ac191e80125195253af5350e42c277d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the required vectors <br /></td></tr>
+<tr class="memitem:ac191e80125195253af5350e42c277d55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLetterRecog.html#ac191e80125195253af5350e42c277d55">LetterRecog</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:ac191e80125195253af5350e42c277d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model loading and setting the parameters.  <a href="#ac191e80125195253af5350e42c277d55">More...</a><br /></td></tr>
 <tr class="separator:ac191e80125195253af5350e42c277d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4a297503603cf321413fa197d5e7141"><td class="memItemLeft" align="right" valign="top"><a id="af4a297503603cf321413fa197d5e7141"></a>
-cv::Point2f&#160;</td><td class="memItemRight" valign="bottom"><b>forward</b> (cv::Mat &amp;src)</td></tr>
+<tr class="memitem:af4a297503603cf321413fa197d5e7141"><td class="memItemLeft" align="right" valign="top">cv::Point2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLetterRecog.html#af4a297503603cf321413fa197d5e7141">forward</a> (cv::Mat &amp;src)</td></tr>
 <tr class="separator:af4a297503603cf321413fa197d5e7141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>class for sign language recognition. An ONNX model is loaded to be used for inference to recognize sign language alphabet </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Class for sign language recognition. An ONNX model is loaded to be used for inference to recognize sign language alphabet and then the incoming frame is normalized. Next, the frame is forwarded to the model to extract features and output the inference result. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac191e80125195253af5350e42c277d55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac191e80125195253af5350e42c277d55">&#9670;&nbsp;</a></span>LetterRecog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LetterRecog::LetterRecog </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Model loading and setting the parameters. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af4a297503603cf321413fa197d5e7141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a297503603cf321413fa197d5e7141">&#9670;&nbsp;</a></span>forward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Point2f LetterRecog::forward </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLetterRecog_af4a297503603cf321413fa197d5e7141_icgraph.png" border="0" usemap="#classLetterRecog_af4a297503603cf321413fa197d5e7141_icgraph" alt=""/></div>
+<map name="classLetterRecog_af4a297503603cf321413fa197d5e7141_icgraph" id="classLetterRecog_af4a297503603cf321413fa197d5e7141_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="197,5,248,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="RecogModel_8h_source.html">RecogModel.h</a></li>
-<li>src/RecogModel.cpp</li>
+<li>src/<a class="el" href="RecogModel_8cpp.html">RecogModel.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
