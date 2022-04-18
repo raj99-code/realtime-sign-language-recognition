@@ -2,6 +2,15 @@
 <img src="kNOw SIGN-logo.png">
 </p>
 
+<div align="center">
+ 
+[![GitHub issues](https://img.shields.io/github/issues/raj99-code/realtime-sign-language-recognition)](https://github.com/raj99-code/realtime-sign-language-recognition/issues)
+[![GitHub forks](https://img.shields.io/github/forks/raj99-code/realtime-sign-language-recognition)](https://github.com/raj99-code/realtime-sign-language-recognition/network)
+[![GitHub stars](https://img.shields.io/github/stars/raj99-code/realtime-sign-language-recognition)](https://github.com/raj99-code/realtime-sign-language-recognition/stargazers)
+[![GitHub license](https://img.shields.io/github/license/raj99-code/realtime-sign-language-recognition)](https://github.com/raj99-code/realtime-sign-language-recognition/blob/main/LICENSE)
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FKnow__Sign)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fraj99-code%2Frealtime-sign-language-recognition)
+ </div>
+
 # KnowSign
 
 Portable sign language (ASL) recognition device that utilizes real-time and efficient programming to help mute and deaf by establishing two-way communication channel with normal people who have never studied sign language.
