@@ -19,12 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 title: kNOw SIGN
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Portable sign language (ASL) recognition device that utilizes real-time and efficient programming to help mute and deaf by establishing two-way communication channel with normal people who have never studied sign language.
-  KnowSign compact design consists of Raspberry Pi 4B, Pi camera (V2.1) and a display.
-#baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://raj99-code.github.io/realtime-sign-language-recognition/" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "realtime-sign-language-recognition/" # the subpath of your site, e.g. /blog
 twitter_username: kNOw__SIGN
 instagram_username:  know.sign
 
@@ -32,6 +28,16 @@ instagram_username:  know.sign
 theme: minima
 plugins:
   - jekyll-feed
+
+header_pages:
+  - about.markdown
+  - requirements.markdown
+  - hardware.markdown
+  - software.markdown
+  - journey.markdown
+  - system.markdown
+  - realtime.markdown
+  - sourcecode.markdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.
