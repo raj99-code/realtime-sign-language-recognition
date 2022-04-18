@@ -37,9 +37,8 @@ To be added soon!
 ## 2. Project Flowchart 
 
  
-<p align="center">
-<img src="FlowChart.png">
-</p>
+
+<img src="./FlowChart.svg">
 
 
 <a name="kNOw_SIGN_Features"></a>
