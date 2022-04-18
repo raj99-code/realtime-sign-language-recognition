@@ -28,27 +28,23 @@ KnowSign compact design consists of Raspberry Pi 4B, Pi camera (V2.1) and a disp
 
 <a name="Project_Demo"></a>
 ## 1. Project Demo
-<details>
- <summary> Click to expand!</summary>
- <br>
+
  
 To be added soon!
-</details>
+
 
 <a name="flow"></a>
 ## 2. Project Flowchart 
-<details>
- <summary> Click to expand!</summary>
- <br>
+
  
-To be added soon!
-</details>
+<p align="center">
+<img src="FlowChart.png">
+</p>
+
 
 <a name="kNOw_SIGN_Features"></a>
 ## 3. kNOw SIGN Features
-<details>
- <summary> Click to expand!</summary>
- <br>
+
  
 1. Real-time American sign language recognition 
 2. Sign language to text display
@@ -60,9 +56,7 @@ more features will be available soon!
 
 <a name="social_media"></a>
 ## 4. Social Media Channels
-<details>
- <summary> Click to expand!</summary>
- <br>
+
  
 KnowSign is still under development. The project progress and advancements will be shared regularly on our social media channels below:  
  
@@ -70,7 +64,7 @@ KnowSign is still under development. The project progress and advancements will 
  [Instagram](https://www.instagram.com/know.sign)    
  [Twitter](https://twitter.com/Know__Sign)  
  [Youtube](https://www.youtube.com/channel/UCDok7kkuFErYF-Gch3gnTTw)  
-</details>
+
 
 <a name="install"></a>
 ## 5. Installation 
@@ -343,7 +337,22 @@ $  pkg-config opencv --cflags
 
   
   
-  ### b.Build from soucre     
+  ### b.Build from soucre   
+ 
+ To install kNOw SIGN from source run the following commands:
+ 
+ #### Clone the GitHub Repository
+ 
+ ``` 
+ git clone https://github.com/raj99-code/realtime-sign-language-recognition.git
+ cd src 
+ cmake .
+ make
+ ```
+ To run the program run the following code:
+ ```
+ ./kNOw_SIGN
+ ```
 </details>
  
 <a name="cont"></a>
@@ -354,10 +363,8 @@ $  pkg-config opencv --cflags
 
 <a name="progress"></a>
 ## 7. Project Progress 
-<details>
- <summary> Click to expand!</summary>
- <br>
- 
+
+[See our progress!](https://github.com/raj99-code/realtime-sign-language-recognition/projects/2)
  
 </details>
  
