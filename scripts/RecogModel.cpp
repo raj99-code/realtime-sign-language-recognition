@@ -8,7 +8,7 @@ LetterRecog::LetterRecog(const std::string &path) {
 
 void LetterRecog::loadModel(const std::string &path) {
 	this->net = cv::dnn::readNetFromONNX(path);
-	std::cout << "Model loaded successfully" << std::endl;
+	// std::cout << "Model loaded successfully" << std::endl;
 }
 
 void LetterRecog::Mat_Normalization(cv::Mat &matrix) {
