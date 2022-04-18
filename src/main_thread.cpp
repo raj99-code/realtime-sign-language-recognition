@@ -24,16 +24,11 @@
 #include "opencv2/imgproc/types_c.h"
 #include "opencv2/highgui/highgui_c.h"
 
-#include "ArduiPi_OLED_lib.h"
-#include "Adafruit_GFX.h"
-#include "ArduiPi_OLED.h"
-
 #include "FrameGen.hpp"
 #include "roi.hpp"
 #include "main.hpp"
 #include "RecogModel.h"
 #include "handDetect.h"
-#include "led_display.hpp"
 
 #include "ThreadSafeFramesQueue.hpp"
 
@@ -53,7 +48,6 @@ int main(){
 	hd.waitForPalmCover(&m);
 	hd.average(&m);
 	hd.initTrackbars();
-	LedDisplay display;
 	int i = 0;
 	int j = 0;
 	int k = 0;
@@ -64,20 +58,15 @@ int main(){
 	ThreadSafeFramesQueue<cv::Mat> rawFrames;
 	std::thread captureThread([&](){
 		while (1) {
-			std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-			std::cout << "Thread 1: " << i++ << ", Raw Frames: " << rawFrames.size() << std::endl;
 			m.cap >> m.src;
 			char key = cv::waitKey(1);
 			if (key == 27 || m.src.empty()) {
 				//! If ESC is pressed OR stream is exhausted, Send the kill-signal to other threads
 				stopRunning = true;
-				display.clearDisplay();
 				break;
 			}
 			/** @note need to use clone here to pass a copy, otherwise input could be corrupted */
 			rawFrames.push(m.src.clone());
-			std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-			std::cout << "Grabber thread runtime = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << "[ms]" << std::endl;
 			cv::imshow("img1", m.src);
 			std::this_thread::sleep_for(std::chrono::milliseconds(700));
 		}
@@ -90,8 +79,6 @@ int main(){
 	ThreadSafeFramesQueue<char> inferenceQueue;
 	std::thread inferenceThread([&](){
 		while (!stopRunning || !rawFrames.empty()) {
-		  std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-		  std::cout << "Thread 2: " << j++ << ", Inference Frames: " << inferenceQueue.size() << std::endl;
 		  cv::Mat inp;
 		  if (rawFrames.Pop(inp)) {
 			//! inp is valid, run inference on it
@@ -104,8 +91,6 @@ int main(){
 			cv::Point2f forw = model.forward(cropped);
 			inferenceQueue.Push(classes[forw.x]);
 		  }
-		  std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-		  std::cout << "Inference thread runtime = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << "[ms]" << std::endl;
 		}
 	});
 	
@@ -114,7 +99,7 @@ int main(){
 	while(!stopRunning || !inferenceQueue.empty()) {
 		char curr_letter;
 		if (inferenceQueue.Pop(curr_letter)) {
-			display.addChar(curr_letter);
+			std::cout << curr_letter << std::endl;
 		}
 	}
 

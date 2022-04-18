@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/PerfectDetect/src
+CMAKE_SOURCE_DIR = /home/pi/PerfectDetect2-PC/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/PerfectDetect/src
+CMAKE_BINARY_DIR = /home/pi/PerfectDetect2-PC/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/PerfectDetect/src/CMakeFiles /home/pi/PerfectDetect/src//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/PerfectDetect2-PC/src/CMakeFiles /home/pi/PerfectDetect2-PC/src//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/PerfectDetect/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/PerfectDetect2-PC/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -250,33 +250,6 @@ handDetect.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kNOw_SIGN.dir/build.make CMakeFiles/kNOw_SIGN.dir/handDetect.cpp.s
 .PHONY : handDetect.cpp.s
 
-led_display.o: led_display.cpp.o
-
-.PHONY : led_display.o
-
-# target to build an object file
-led_display.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kNOw_SIGN.dir/build.make CMakeFiles/kNOw_SIGN.dir/led_display.cpp.o
-.PHONY : led_display.cpp.o
-
-led_display.i: led_display.cpp.i
-
-.PHONY : led_display.i
-
-# target to preprocess a source file
-led_display.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kNOw_SIGN.dir/build.make CMakeFiles/kNOw_SIGN.dir/led_display.cpp.i
-.PHONY : led_display.cpp.i
-
-led_display.s: led_display.cpp.s
-
-.PHONY : led_display.s
-
-# target to generate assembly for a file
-led_display.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kNOw_SIGN.dir/build.make CMakeFiles/kNOw_SIGN.dir/led_display.cpp.s
-.PHONY : led_display.cpp.s
-
 main_thread.o: main_thread.cpp.o
 
 .PHONY : main_thread.o
@@ -352,9 +325,6 @@ help:
 	@echo "... handDetect.o"
 	@echo "... handDetect.i"
 	@echo "... handDetect.s"
-	@echo "... led_display.o"
-	@echo "... led_display.i"
-	@echo "... led_display.s"
 	@echo "... main_thread.o"
 	@echo "... main_thread.i"
 	@echo "... main_thread.s"
