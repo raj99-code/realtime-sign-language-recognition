@@ -1,4 +1,0 @@
-<map id="InterHand::detectIfHand" name="InterHand::detectIfHand">
-<area shape="rect" id="node2" href="$classhandDetect.html#a35f575cfb5b4702e9da8bf4c7a0c8b83" title="create contours for the hand from the incoming frame to get the hand location and detect the hand ..." alt="" coords="216,5,399,32"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="447,5,497,32"/>
-</map>

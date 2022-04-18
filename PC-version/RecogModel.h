@@ -18,11 +18,6 @@ class LetterRecog {
    *
    */
 		LetterRecog(const std::string &path);
-      /**
-   * @brief Pass the frame to the model for inference
-   * 
-   *
-   */
 		cv::Point2f forward(cv::Mat &src);
 	private:
 		cv::dnn::Net net;

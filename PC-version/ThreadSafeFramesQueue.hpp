@@ -1,5 +1,8 @@
-/** 
- *  @brief thread-safe queue (FIFO) implementation (with timer)
+/** @file ThreadSafeFramesQueue.hpp
+ *  @author Joe Dinius, Ph.D
+ *  @date 28 Nov. 2020
+ *
+ *  @brief generic thread-safe queue (FIFO) implementation (with timer)
  *
  *  @see https://docs.opencv.org/3.4/d4/db9/samples_2dnn_2object_detection_8cpp-example.html#_a20
  */
@@ -14,7 +17,7 @@
 //! project headers
 
 /**
- * 
+ * @class ThreadSafeFramesQueue
  *
  * @brief generic thread-safe queue (FIFO) implementation (with timer)
  *
