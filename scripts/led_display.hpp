@@ -7,10 +7,10 @@ class LedDisplay {
 		LedDisplay();
 		~LedDisplay();
 		void addChar(char &curr_letter);
+		void clearDisplay();
 	private:
 		ArduiPi_OLED display;
 		int row;
 		int col;
-		void clearDisplay();
 		void updateCursor();
 };

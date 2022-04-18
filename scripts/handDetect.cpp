@@ -66,8 +66,8 @@ void handDetect::waitForPalmCover(MyImage* m){
 		//	imwrite("./images/waitforpalm1.jpg",m->src);
 		}
 
-		imshow("img1", m->src);
-		//out << m->src;
+		// imshow("img1", m->src);
+		// out << m->src;
         if(cv::waitKey(30) >= 0) break;
 	}
 }
@@ -117,7 +117,7 @@ void handDetect::average(MyImage *m){
 		cvtColor(m->src,m->src,COL2ORIGCOL);
 		std::string imgText = std::string("Finding average color of hand");
 		printText(m->src,imgText);	
-		imshow("img1", m->src);
+		// imshow("img1", m->src);
         if(cv::waitKey(30) >= 0) break;
 	}
 }
@@ -200,7 +200,7 @@ cv::Mat handDetect::crop(MyImage *m, HandGesture *hg){
 
       cv::Rect croppin(hg->bRect.tl(),hg->bRect.br());
 	  cv::Mat q=m->src(cv::Rect(hg->bRect.tl(),hg->bRect.br()));
-	cv::imshow("img22",q);	
+	// cv::imshow("img22",q);	
 	return q;
 
 }

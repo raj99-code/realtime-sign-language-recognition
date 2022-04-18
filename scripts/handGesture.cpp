@@ -1,6 +1,6 @@
 #include "handGesture.hpp"
 #include <opencv2/imgproc/imgproc.hpp>
-#include<opencv2/opencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,7 +9,7 @@
 
 
 HandGesture::HandGesture(){
-	frameNumber = 0;	
+	frameNumber = 0;
 	fontFace = cv::FONT_HERSHEY_PLAIN;
 }
 
