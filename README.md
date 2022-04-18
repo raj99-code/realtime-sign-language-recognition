@@ -30,10 +30,11 @@ KnowSign compact design consists of Raspberry Pi 4B, Pi camera (V2.1) and a disp
 1. [ Project Demo. ](#Project_Demo)
 2. [ Project Flowchart. ](#flow)
 3. [ kNOw SIGN Features. ](#kNOw_SIGN_Features)
-4. [ Social Media Channels. ](#social_media)
-5. [ Installation. ](#install)
-6. [ Authors. ](#cont)
-7. [ Project Progress. ](#progress)
+4. [Documentation ](#kNOw_SIGN_Doc)
+5. [ Social Media Channels. ](#social_media)
+6. [ Installation. ](#install)
+7. [ Authors. ](#cont)
+8. [ Project Progress. ](#progress)
 
 
 
@@ -68,8 +69,14 @@ To be added soon!
 more features will be available soon!
 </details>
 
+<a name="kNOw_SIGN_Doc"></a>
+## 4. Documentation 
+
+You can check the project details and source code documentation in KNOw SIGN page [HERE](https://raj99-code.github.io/realtime-sign-language-recognition/)
+
+
 <a name="social_media"></a>
-## 4. Social Media Channels
+## 5. Social Media Channels
 
  
 KnowSign is still under development. The project progress and advancements will be shared regularly on our social media channels below:  
@@ -81,7 +88,7 @@ KnowSign is still under development. The project progress and advancements will 
 
 
 <a name="install"></a>
-## 5. Installation 
+## 6. Installation 
 <details>
  <summary> Click to expand!</summary>
  <br>
@@ -370,13 +377,13 @@ $  pkg-config opencv --cflags
 </details>
  
 <a name="cont"></a>
-## 6. Authors 
+## 7. Authors 
 <a href="https://github.com/raj99-code/realtime-sign-language-recognition/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=raj99-code/realtime-sign-language-recognition" />
 </a>
 
 <a name="progress"></a>
-## 7. Project Progress 
+## 8. Project Progress 
 
 [See our progress!](https://github.com/raj99-code/realtime-sign-language-recognition/projects/2)
  
