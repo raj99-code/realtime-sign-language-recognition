@@ -1,3 +1,0 @@
-/home/abdullah-alfakhrey/Documents/final-RTEP/handDetectionCV/src/CMakeFiles/kNOw_SIGN.dir
-/home/abdullah-alfakhrey/Documents/final-RTEP/handDetectionCV/src/CMakeFiles/edit_cache.dir
-/home/abdullah-alfakhrey/Documents/final-RTEP/handDetectionCV/src/CMakeFiles/rebuild_cache.dir

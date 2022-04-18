@@ -2,7 +2,7 @@
 #define _MYIMAGE_ 
 
 #include <opencv2/imgproc/imgproc.hpp>
-#include<opencv2/opencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <vector>
 
 	/**
@@ -14,6 +14,7 @@
 class FrameGen{
 	public:
 		FrameGen(int Camera);
+		FrameGen(cv::Mat &src);
 		FrameGen();
 		cv::Mat srcLR;
 		

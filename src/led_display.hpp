@@ -18,16 +18,18 @@ class LedDisplay {
    *
    */
 		void addChar(char &curr_letter);
-	private:
-		ArduiPi_OLED display;
-		int row;
-		int col;
+
 			/**
    * @brief Clear the OLED display when called
    * 
    *
    */
 		void clearDisplay();
+
+	private:
+		ArduiPi_OLED display;
+		int row;
+		int col;
 
 			/**
    * @brief Moves the display cursor to the next position
