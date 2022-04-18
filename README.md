@@ -366,13 +366,21 @@ $  pkg-config opencv --cflags
  
  ``` 
  git clone https://github.com/raj99-code/realtime-sign-language-recognition.git
- cd src 
+ ```
+ then go to the src folder for the Raspberry Pi version or to the PC-version folder to use a Linux computer to run the project.
+ Inside src or PC-version folder run the following code to build:
+ ```
  cmake .
  make
  ```
- To run the program run the following code:
+ #### To run the program run the following code:
  ```
  ./kNOw_SIGN
+ ```
+ 
+ #### To run all the unit tests at once use the command below:
+ ```
+ ./run_all_tests.sh
  ```
 </details>
  
