@@ -1,4 +1,4 @@
-#include "../../scripts/RecogModel.h"
+#include "../../src/RecogModel.h"
 #include "gtest/gtest.h"
 #include "opencv2/opencv.hpp"
 #include <iostream>

@@ -1,4 +1,4 @@
-#include "../../scripts/roi.hpp"
+#include "../../src/roi.hpp"
 #include "gtest/gtest.h"
 #include "opencv2/opencv.hpp"
 #include <iostream>
