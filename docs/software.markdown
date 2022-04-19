@@ -277,5 +277,26 @@ $  pkg-config opencv --cflags
   
 ### b.Build from source     
 
-
+To install kNOw SIGN from source run the following commands:
+ 
+#### Clone the GitHub Repository
+ 
+``` 
+git clone https://github.com/raj99-code/realtime-sign-language-recognition.git
+```
+then go to the src folder for the Raspberry Pi version or to the PC-version folder to use a Linux computer to run the project.
+Inside src or PC-version folder run the following code to build:
+```
+cmake .
+make
+```
+#### To run the program run the following code:
+```
+./kNOw_SIGN
+```
+ 
+#### To run all the unit tests at once use the command below:
+```
+./run_all_tests.sh
+```
  

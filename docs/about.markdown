@@ -4,17 +4,18 @@ title: About
 permalink: /about/
 ---
 
-Portable sign language (ASL) recognition device that utilizes real-time and efficient programming to help mute and deaf by establishing two-way communication channel with normal people who have never studied sign language.
+Portable sign language (ASL) recognition device that utilizes real-time and efficient programming to help mute and deaf by establishing two-way communication channel with people who have never studied sign language.
 
-KnowSign compact design consists of Raspberry Pi 4B, Pi camera (V2.1) and a display.
+KnowSign compact design consists of Raspberry Pi 4B, Pi camera (V2.1) and an OLED display.
 
 ## kNOw SIGN Features
 
 1. Real-time American sign language recognition
 2. Sign language to text display
 3. Fast and efficient deep learning algorithm
-4. Portable device for the recognition using Raspberry PI
-more features will be available soon!
+4. Portable device for the recognition using Raspberry Pi.
+
+More features will be available soon!
 
 
 Check out our [github repository][github] for more info on our source code!
@@ -23,7 +24,7 @@ Check out our [github repository][github] for more info on our source code!
 
 ## Social Media Channels
 
-Follow our social channels to keep up to date with our branding and public outreach.
+Follow our social media channels to keep yourself updated with our branding and public outreach.
 
 - [Twitter](https://twitter.com/Know__Sign)
 - [Instagram](https://www.instagram.com/know.sign)

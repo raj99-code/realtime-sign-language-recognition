@@ -30,7 +30,7 @@ plugins:
   - jekyll-feed
 
 header_pages:
-  - about.markdown
+  - home.markdown
   - requirements.markdown
   - hardware.markdown
   - software.markdown
@@ -38,6 +38,7 @@ header_pages:
   - system.markdown
   - realtime.markdown
   - sourcecode.markdown
+  - about.markdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.

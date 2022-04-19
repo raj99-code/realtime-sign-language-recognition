@@ -6,3 +6,5 @@ title: System Design
 permalink: /system/sysdesign/
 
 ---
+This is the overview of the kNOw SIGN system:
+<embed src="{{site.url}}/images/systemdesign.pdf" type="application/pdf" width="100%" height="600px" />

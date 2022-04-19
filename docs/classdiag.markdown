@@ -6,3 +6,5 @@ title: Class Diagram
 permalink: /system/classdiag/
 
 ---
+This is the class diagram of kNOw SIGN:
+<embed src="{{site.url}}/images/classdiagram.pdf" type="application/pdf" width="100%" height="600px" />

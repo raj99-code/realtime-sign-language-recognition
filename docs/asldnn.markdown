@@ -30,4 +30,4 @@ The training accuracy and training loss was approximately 98.87% and 0.1100 resp
 
 ## Conversion of the model
 This trained model was converted to ONNX (Open Neural Network Exchange Format) format. Conversion to this format makes it easier to move between frameworks and is used to represent any kind of Machine Learning/Deep Learning model. To convert into ONNX format create an example input of the same shape our model would expect and load the pre-trained weights that must be in evaluation mode into it using onnx export.
-![aslonnx]({{site.url}}/images/aslonnx.png)
+<embed src="{{site.url}}/images/aslonnx.pdf" type="application/pdf" width="100%" height="600px" />

@@ -15,3 +15,14 @@ To setup kNOw SIGN on your own follow the steps below!
   - Minimum recommended storage size is 8GB
   - Note that Raspberry Pi model 3 or higher takes a micro SD card
 - USB type C power supply
+
+## Assembly
+This is the hardware assembly of kNOw SIGN: 
+
+1. Connect the camera to the CSI port of the Raspberry Pi.
+2. Attach the OLED SH1106 display to the Raspberry Pi according to the configuration in the figure below.
+3. Insert the flashed SD card in the Raspberry Pi.
+4. Enable the camera functionality on your Raspberry Pi.
+5. Connect the power supply and you're ready!
+
+![hardware]({{site.url}}/images/hardware.png)

@@ -8,8 +8,8 @@ permalink: /sourcecode/
 ---
 Doxygen source code documentation kNOw SIGN
 
-<!-- <div align="center">
-  <a href="html/index.html">
+<div align="center">
+  <a href="{{site.url}}/html/index.html">
     <button type="button" class="btn">Check out our docs by clicking here!</button>
   </a>
-</div> -->
+</div>
